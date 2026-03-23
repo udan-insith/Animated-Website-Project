@@ -108,3 +108,15 @@ body {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* HOME SECTION */
+.home {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-left {
+  margin-top: 7em;
+  font-size: var(--fs-3);
+  font-family: var(--font-display);
+}
