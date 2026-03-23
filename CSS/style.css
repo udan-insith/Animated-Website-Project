@@ -1,0 +1,110 @@
+/* Basic Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Custom Properties */
+:root {
+  /* --- DARK CORE PALETTE --- */
+  --bg-main: #07151c; /* Deep inky midnight */
+  --bg-surface: #0d2f3a; /* Darker teal for cards/sections */
+  --bg-soft: #1c5d6b; /* Soft slate blue-green */
+
+  /* --- GREEN ACCENTS --- */
+  --green-primary: #0fa37f; /* Vivid emerald for key actions */
+  --green-muted: #2a9d8f; /* Soft, organic sage green */
+  --green-glow: #00ffdd; /* Bright neon for micro-accents */
+
+  /* --- BLUE ACCENTS --- */
+  --blue-primary: #074799; /* Strong, confident royal blue */
+  --blue-accent: #4cb6b6; /* Lighter coastal aqua blue */
+  --blue-deep: #00018d; /* Traditional navy for contrast */
+
+  /* --- TEXT & NEUTRALS --- */
+  --text-primary: #f7f3e8; /* Warm off-white for high readability */
+  --text-secondary: #b7c6bf; /* Muted grey-green for subtext */
+  --text-dim: #798f8b; /* Low-contrast text for footers */
+  --border-subtle: #2f4f4f; /* Dark slate border */
+
+  --clr-light: #fff;
+  --clr-dark: #000;
+
+  /* --- TYPOGRAPHY (Common Web Fonts) --- */
+  /* Modern Sans-Serif for Body & UI */
+  --font-main:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Geometric Sans-Serif for Headlines */
+  --font-display: "Poppins", "Montserrat", sans-serif;
+  /* Refined Serif for Editorial feel */
+  --font-serif: "Playfair Display", "Lora", serif;
+
+  --fs-1: 1.2rem;
+  --fs-2: 1.4rem;
+  --fs-3: 1.5rem;
+
+  /* --- SYSTEM UI (Standard Colors) --- */
+  --status-ok: #008000; /* Standard green */
+  --status-warn: #ffa500; /* Standard orange */
+  --status-danger: #ff0000; /* Standard red */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* HEADER SECTION */
+.header {
+  height: 6em;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 15px 2px var(--clr-dark);
+}
+
+.logo {
+  margin: 1em;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  margin: 2em 2em 1.5em;
+}
+
+.nav-links {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  transition: color 250ms ease;
+}
+
+.nav-links::after {
+  content: "";
+  position: absolute;
+  bottom: 2.5em;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--green-muted);
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
+
+.nav-links:hover {
+  color: var(--green-muted);
+}
+
+.nav-links:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
