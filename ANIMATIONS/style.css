@@ -1,0 +1,11 @@
+/* Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  background: #000;
+}
