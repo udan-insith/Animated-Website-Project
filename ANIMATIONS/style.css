@@ -8,4 +8,43 @@
 /* Body styles */
 body {
   background: #000;
+  display: grid;
+  place-items: center;
+}
+
+/* Card Styles */
+.card {
+  width: 300px;
+  height: 350px;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  border-radius: 16px;
+  background: conic-gradient(transparent, transparent, #ff007a);
+  animation: rotate 3s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #000;
+  border-radius: 16px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
